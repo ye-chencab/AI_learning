@@ -1,4 +1,4 @@
-name = "你的名字"
+name = "chenye"
 print(f"你好，{name}！")
 print("环境安装成功，开始学 AI。")
 
