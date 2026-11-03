@@ -1,3 +1,9 @@
 .venv/
 .idea/
 __pycache__/
+sample.txt
+empty.txt
+s1.txt
+s2.txt
+log.txt
+out.txt
