@@ -13,7 +13,7 @@ def clean(raw):
     df['qty'] =df['qty'].astype(int)
     df['unit_price'] = pd.to_numeric(df['unit_price'], errors = 'coerce')
     df['cost'] = pd.to_numeric(df['cost'], errors='coerce')
-    df['amount'] = df['qty']*raw['unit_price']
+    df['amount'] = df['qty']*df['unit_price']
     df['profit'] = df['amount'] -df['qty'] * df['cost']
     print(raw.dtypes)
     print(df['amount'].sum())
@@ -22,7 +22,7 @@ def analyze(raw,df):
     df_cateamount = df.groupby('category')['amount'].sum()
     df_cateamount = df_cateamount.sort_values(ascending = False)
     print(df_cateamount.head(3))
-    df['month'] = pd.to_datetime(raw['date']).dt.strftime('%Y-%m')
+    df['month'] = pd.to_datetime(df['date']).dt.strftime('%Y-%m')
     df_monamount = df.groupby('month')['amount'].sum()
     df_maxmonamount = df_monamount.idxmax()
     df_minmonamount = df_monamount.idxmin()
