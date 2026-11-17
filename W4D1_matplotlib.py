@@ -57,7 +57,7 @@ ax.annotate(
     arrowprops=dict(arrowstyle="->", color='red',lw=1),
 )
 Path("charts").mkdir(exist_ok=True)
-fig.savefig("charts/01_monthly.png", dpi=150, bbox_inches="tight")
+fig.savefig("charts/01_monthly.png", dpi=150, bbox_inches="tight")  #保存
 plt.close(fig)
 p = Path("charts/01_monthly.png")
 assert p.exists(), "图没生成"
